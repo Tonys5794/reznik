@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Студия Юлии Резник - маникюр, педикюр, подология в Краснодаре, ГМР</title>
-<meta name="description" content="Студия маникюра и педикюра на ГМР в Краснодаре. Аппаратный маникюр, гель-лак, наращивание, педикюр, подология, брови и ресницы. Проспект Писателя Знаменского, 17.">
+<meta name="description" content="Студия маникюра и педикюра на ГМР в Краснодаре. Аппаратный маникюр, гель-лак, наращивание, педикюр, подология, брови и ресницы. Проспект Писателя Знаменского, 2.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -103,6 +103,23 @@ h2{font-size:clamp(30px,4.4vw,48px);margin:0 0 16px;font-weight:300}
 .about-photo{margin:0;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5}
 .about-photo img{width:100%;height:100%;object-fit:cover}
 
+
+/* мастера */
+#mastera{background:var(--cream)}
+.m-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.m-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.m-photo{aspect-ratio:4/5;background:var(--cream-2);overflow:hidden}
+.m-photo img{width:100%;height:100%;object-fit:cover}
+.m-photo--mark{display:flex;align-items:center;justify-content:center;background:var(--rose)}
+.m-photo--mark img{width:34%;height:auto;object-fit:contain;opacity:.85}
+.m-body{padding:26px 28px 30px}
+.m-body h3{font-size:28px;margin:0 0 6px}
+.m-role{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--rose-dk);margin:0 0 16px;line-height:1.6}
+.m-quote{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.5;color:var(--ink);margin:0 0 18px}
+.m-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.m-list li{padding-left:22px;position:relative;color:var(--ink-2);font-size:15px}
+.m-list li::before{content:"";position:absolute;left:0;top:11px;width:10px;height:1px;background:var(--rose)}
+
 /* работы */
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .gallery figure{margin:0;border-radius:14px;overflow:hidden;background:var(--cream-2);aspect-ratio:3/4;cursor:zoom-in}
@@ -180,6 +197,7 @@ body{padding-bottom:38px}
     <nav class="nav">
       <a href="#uslugi">Услуги</a>
       <a href="#studio">О студии</a>
+      <a href="#mastera">Мастера</a>
       <a href="#raboty">Работы</a>
       <a href="#otzyvy">Отзывы</a>
       <a href="#kontakty">Контакты</a>
@@ -198,7 +216,8 @@ body{padding-bottom:38px}
       <nav class="nav">
         <a href="#uslugi">Услуги</a>
         <a href="#studio">О студии</a>
-        <a href="#raboty">Работы</a>
+        <a href="#mastera">Мастера</a>
+      <a href="#raboty">Работы</a>
         <a href="#otzyvy">Отзывы</a>
         <a href="#kontakty">Контакты</a>
       </nav>
@@ -284,10 +303,11 @@ body{padding-bottom:38px}
       <div>
         <p class="eyebrow">О студии</p>
         <h2>Julia Reznik beauty studio</h2>
-        <p>Студия работает в Краснодаре на ГМР, на проспекте имени Писателя Знаменского. Здесь делают маникюр и педикюр, ведут приём подолога, занимаются бровями и ресницами - всё в одном месте и по записи, без очередей.</p>
+        <p>Студия работает в Краснодаре на ГМР, на проспекте имени Писателя Знаменского, с 2018 года. Здесь делают маникюр и педикюр, ведут приём подолога, занимаются бровями и ресницами - всё в одном месте и по записи, без очередей.</p>
         <p>К нам приходят не на разовую процедуру, а годами: в отзывах клиенты пишут про второй и третий год подряд у одного мастера. Это лучший показатель того, как здесь работают.</p>
         <ul class="facts">
           <li>Работаем 8 лет, рейтинг 4,6 в 2ГИС</li>
+          <li>Основатель и руководитель - Юлия Резник, инструктор и практикующий подолог</li>
           <li>По ногтям работают два мастера: Юлия и Ангелина</li>
           <li>Приём строго по записи, своё время не сдвигаем</li>
           <li>Индивидуальный набор инструментов, стерилизация после каждого клиента</li>
@@ -295,6 +315,45 @@ body{padding-bottom:38px}
         </ul>
       </div>
       <figure class="about-photo"><img src="./master.jpg" alt="Основательница студии"></figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- мастера -->
+<section id="mastera">
+  <div class="wrap">
+    <p class="eyebrow">Мастера</p>
+    <h2>Кто вас примет</h2>
+    <p class="lead">По ногтям в студии работают два мастера. При записи можно выбрать, к кому именно вы хотите попасть.</p>
+    <div class="m-grid">
+
+      <article class="m-card">
+        <div class="m-photo"><img src="./master-yulia.jpg" alt="Юлия Резник, руководитель студии" loading="lazy"></div>
+        <div class="m-body">
+          <h3>Юлия Резник</h3>
+          <p class="m-role">Руководитель студии · инструктор по маникюру и педикюру · практикующий подолог</p>
+          <p class="m-quote">«Практикую, обучаю, обожаю. Разбег от обычного маникюра до сложной подологии»</p>
+          <ul class="m-list">
+            <li>Ведёт студию с 2018 года, обучает мастеров</li>
+            <li>Маникюр, укрепление, коррекция без опила, наращивание любой сложности - 1 400 - 2 500 ₽</li>
+            <li>Аппаратный педикюр, гигиеническая чистка стопы, покрытие - 1 300 - 2 000 ₽</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="m-card">
+        <div class="m-photo m-photo--mark"><img src="./mark-dark.png" alt="" loading="lazy"></div>
+        <div class="m-body">
+          <h3>Ангелина</h3>
+          <p class="m-role">Мастер маникюра</p>
+          <p class="m-quote">Аккуратная классика и лёгкий дизайн на каждый день</p>
+          <ul class="m-list">
+            <li>Маникюр с покрытием гель-лаком, укрепление ногтевой пластины, лёгкий дизайн - 1 200 - 1 600 ₽</li>
+          </ul>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -348,7 +407,7 @@ body{padding-bottom:38px}
     <p class="lead">Запись по телефону или в сообщения сообщества ВКонтакте. Напишите, какая услуга нужна и когда вам удобно - подберём время.</p>
     <div class="contact-grid">
       <div>
-        <div class="cline"><div class="k">Адрес</div><div class="v">Краснодар, проспект имени Писателя Знаменского, 17<br><span style="color:var(--ink-2);font-size:14px">микрорайон Гидростроителей</span></div></div>
+        <div class="cline"><div class="k">Адрес</div><div class="v">Краснодар, проспект имени Писателя Знаменского, 2<br><span style="color:var(--ink-2);font-size:14px">2 этаж, офисы 11 и 21, микрорайон Гидростроителей</span></div></div>
         <div class="cline"><div class="k">Телефон</div><div class="v"><a href="tel:+79183877965">+7 918 387-79-65</a></div></div>
         <div class="cline"><div class="k">ВКонтакте</div><div class="v"><a href="https://vk.com/club211841083" target="_blank" rel="noopener">vk.com/club211841083</a></div></div>
         <div class="cline"><div class="k">Часы</div><div class="v">Ежедневно 9:00-20:00, приём по записи</div></div>
@@ -359,7 +418,7 @@ body{padding-bottom:38px}
       </div>
       <div class="map">
         <div class="serif">Julia Reznik beauty studio</div>
-        <p>ГМР, проспект имени Писателя Знаменского, 17</p>
+        <p>Проспект имени Писателя Знаменского, 2<br>2 этаж, офисы 11 и 21</p>
         <a class="btn btn-outline" href="https://2gis.ru/krasnodar/firm/70000001035189462" target="_blank" rel="noopener">Открыть в 2ГИС</a>
       </div>
     </div>
@@ -372,7 +431,7 @@ body{padding-bottom:38px}
       <div>
         <h4>Исполнитель</h4>
         <p>Данные исполнителя (правовой статус, ФИО, ИНН) заполняются по документам студии.</p>
-        <p>Адрес оказания услуг: Краснодар, проспект имени Писателя Знаменского, 17.</p>
+        <p>Адрес оказания услуг: Краснодар, проспект имени Писателя Знаменского, 2, 2 этаж, офисы 11 и 21.</p>
         <p>Телефон: +7 918 387-79-65</p>
       </div>
       <div>
