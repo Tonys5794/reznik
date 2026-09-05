@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Студия Юлии Резник - маникюр, педикюр, подология в Краснодаре, ГМР</title>
+<meta name="description" content="Студия маникюра и педикюра на ГМР в Краснодаре. Аппаратный маникюр, гель-лак, наращивание, педикюр, подология, брови и ресницы. Проспект Писателя Знаменского, 17.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --dark:#2B1E22;
+  --dark-2:#3A2A2F;
+  --cream:#FAF5F1;
+  --cream-2:#F2E9E2;
+  --rose:#C08A7D;
+  --rose-dk:#A26B5F;
+  --ink:#2B1E22;
+  --ink-2:#6B5B5D;
+  --line:#E2D5CC;
+  --shadow:0 18px 50px rgba(43,30,34,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:.01em}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ---------- шапка внутри первого экрана ---------- */
+.hero{position:relative;min-height:calc(100svh - 38px);background:var(--dark);color:var(--cream);display:flex;flex-direction:column;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 0%,rgba(192,138,125,.22),transparent 60%);pointer-events:none}
+.topbar{position:relative;z-index:3;padding:22px 0}
+.topbar .wrap{display:flex;align-items:center;gap:24px}
+.nav{display:flex;gap:26px;flex-wrap:wrap}
+.nav a{text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,245,241,.72);transition:color .2s}
+.nav a:hover{color:#fff}
+.topmeta{margin-left:auto;display:flex;align-items:center;gap:22px}
+.topmeta .tel{font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+.topmeta .hours{font-size:12px;color:rgba(250,245,241,.6);white-space:nowrap}
+.btn{display:inline-block;border:0;cursor:pointer;text-decoration:none;text-align:center;font-family:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:14px 26px;border-radius:999px;transition:transform .2s,background .2s,color .2s}
+.btn-light{background:var(--cream);color:var(--dark)}
+.btn-light:hover{background:#fff;transform:translateY(-1px)}
+.btn-dark{background:var(--dark);color:var(--cream)}
+.btn-dark:hover{background:var(--dark-2);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-outline:hover{border-color:var(--rose);color:var(--rose-dk)}
+
+.hero-center{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px}
+.mono{width:104px;height:104px;border:1px solid rgba(250,245,241,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;font-size:34px;letter-spacing:.06em;color:var(--cream);margin-bottom:30px}
+.hero-center h1{font-size:clamp(38px,7vw,76px);line-height:1.05;margin:0 0 18px;font-weight:300}
+.hero-center .sub{font-family:"Cormorant Garamond",serif;font-size:clamp(17px,2.4vw,23px);color:rgba(250,245,241,.72);font-style:italic;margin:0 0 34px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+.ribbon{position:relative;z-index:2;border-top:1px solid rgba(250,245,241,.14)}
+.ribbon .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.ribbon .cell{padding:26px 10px;text-align:center;border-right:1px solid rgba(250,245,241,.10)}
+.ribbon .cell:last-child{border-right:0}
+.ribbon .num{font-family:"Cormorant Garamond",serif;font-size:clamp(26px,4vw,40px);line-height:1}
+.ribbon .cap{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,245,241,.55);margin-top:8px}
+
+/* ---------- прилипающая шапка ---------- */
+.sticky{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,245,241,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transform:translateY(-102%);transition:transform .35s ease}
+.sticky.on{transform:translateY(0)}
+.sticky .wrap{display:flex;align-items:center;gap:24px;padding-top:12px;padding-bottom:12px}
+.sticky .logo{display:flex;align-items:center;gap:10px;font-family:"Cormorant Garamond",serif;font-size:19px;white-space:nowrap}
+.sticky .logo i{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;letter-spacing:.04em}
+.sticky .nav a{color:var(--ink-2)}
+.sticky .nav a:hover{color:var(--ink)}
+.sticky .topmeta .hours{color:var(--ink-2)}
+
+/* ---------- секции ---------- */
+section{padding:88px 0}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose-dk);margin:0 0 14px}
+h2{font-size:clamp(30px,4.4vw,48px);margin:0 0 16px;font-weight:300}
+.lead{max-width:620px;color:var(--ink-2);margin:0 0 44px}
+
+/* услуги */
+.price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px;box-shadow:var(--shadow)}
+.card h3{font-size:26px;margin:0 0 4px}
+.card .note{font-size:12px;color:var(--ink-2);margin:0 0 18px}
+.row{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:0}
+.row .nm{flex:1}
+.row .dots{flex:0 0 auto}
+.row .pr{white-space:nowrap;color:var(--ink-2);font-size:14px}
+.price-note{margin-top:26px;font-size:13px;color:var(--ink-2)}
+
+/* о студии */
+.about{background:var(--cream-2)}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.about p{margin:0 0 16px}
+.facts{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.facts li{padding-left:26px;position:relative;color:var(--ink-2)}
+.facts li::before{content:"";position:absolute;left:0;top:11px;width:10px;height:1px;background:var(--rose)}
+.about-photo{border-radius:18px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+
+/* работы */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery figure{margin:0;border-radius:14px;overflow:hidden;background:var(--cream-2);aspect-ratio:3/4;cursor:zoom-in}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery figure:hover img{transform:scale(1.04)}
+
+/* отзывы */
+.reviews{background:var(--dark);color:var(--cream)}
+.reviews h2,.reviews .eyebrow{color:inherit}
+.reviews .eyebrow{color:var(--rose)}
+.reviews .lead{color:rgba(250,245,241,.65)}
+.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.rev{background:rgba(250,245,241,.06);border:1px solid rgba(250,245,241,.12);border-radius:18px;padding:26px 28px}
+.rev p{margin:0 0 16px;font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.5}
+.rev .who{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,245,241,.55)}
+.rev-src{margin-top:26px;font-size:13px;color:rgba(250,245,241,.5)}
+.rev-src a{color:rgba(250,245,241,.75)}
+
+/* контакты */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.cline{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.cline .k{flex:0 0 110px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);padding-top:3px}
+.cline .v{flex:1}
+.cline a{text-decoration:none;border-bottom:1px solid var(--line)}
+.cline a:hover{border-color:var(--rose)}
+.contact-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.map{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--cream-2);min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 28px;box-shadow:var(--shadow)}
+.map .serif{font-size:28px;margin-bottom:6px}
+.map p{color:var(--ink-2);margin:0 0 20px}
+
+/* подвал */
+footer{background:var(--cream-2);border-top:1px solid var(--line);padding:56px 0 40px;font-size:13px;color:var(--ink-2)}
+footer h4{font-family:"Manrope",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin:0 0 12px}
+.legal-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:40px}
+.legal-grid p{margin:0 0 10px}
+.fine{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;line-height:1.7}
+
+/* плашка демо */
+.demo-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--rose-dk);color:#fff;font-size:12px;letter-spacing:.06em;text-align:center;padding:9px 16px}
+.demo-bar b{font-weight:600}
+body{padding-bottom:38px}
+@media (max-width:760px){body{padding-bottom:64px}}
+@media (max-width:480px){body{padding-bottom:86px}}
+
+/* просмотр фото */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(30,20,23,.94);display:none;align-items:center;justify-content:center;padding:32px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:10px}
+
+@media (max-width:900px){
+  section{padding:64px 0}
+  .price-grid,.about-grid,.contact-grid,.rev-grid{grid-template-columns:1fr;gap:28px}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .legal-grid{grid-template-columns:1fr;gap:26px}
+  .nav{display:none}
+  .sticky .nav{display:none}
+  .topmeta{margin-left:auto}
+  .topmeta .hours{display:none}
+}
+@media (max-width:560px){
+  .ribbon .wrap{grid-template-columns:repeat(2,1fr)}
+  .ribbon .cell:nth-child(2){border-right:0}
+  .ribbon .cell:nth-child(1),.ribbon .cell:nth-child(2){border-bottom:1px solid rgba(250,245,241,.10)}
+  .topmeta .tel{display:none}
+  .cline .k{flex:0 0 88px}
+}
+</style>
+</head>
+<body>
+
+<!-- прилипающая шапка -->
+<div class="sticky" id="sticky">
+  <div class="wrap">
+    <a class="logo" href="#top" style="text-decoration:none"><i>ЮР</i> Студия Юлии Резник</a>
+    <nav class="nav">
+      <a href="#uslugi">Услуги</a>
+      <a href="#studio">О студии</a>
+      <a href="#raboty">Работы</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+    <div class="topmeta">
+      <span class="hours">Ежедневно 9:00-20:00</span>
+      <a class="btn btn-dark" href="https://vk.com/club211841083" target="_blank" rel="noopener">Записаться</a>
+    </div>
+  </div>
+</div>
+
+<!-- первый экран -->
+<header class="hero" id="top">
+  <div class="topbar">
+    <div class="wrap">
+      <nav class="nav">
+        <a href="#uslugi">Услуги</a>
+        <a href="#studio">О студии</a>
+        <a href="#raboty">Работы</a>
+        <a href="#otzyvy">Отзывы</a>
+        <a href="#kontakty">Контакты</a>
+      </nav>
+      <div class="topmeta">
+        <a class="tel" href="tel:+79183877965">+7 918 387-79-65</a>
+        <span class="hours">Ежедневно 9:00-20:00</span>
+        <a class="btn btn-light" href="https://vk.com/club211841083" target="_blank" rel="noopener">Записаться</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-center">
+    <div class="mono">ЮР</div>
+    <h1>Студия Юлии Резник</h1>
+    <p class="sub">маникюр, педикюр и подология на ГМР, Краснодар</p>
+    <div class="hero-cta">
+      <a class="btn btn-light" href="https://vk.com/club211841083" target="_blank" rel="noopener">Написать во ВКонтакте</a>
+      <a class="btn btn-light" href="tel:+79183877965" style="background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1px rgba(250,245,241,.4)">Позвонить</a>
+    </div>
+  </div>
+
+  <div class="ribbon">
+    <div class="wrap">
+      <div class="cell"><div class="num">8</div><div class="cap">лет работаем</div></div>
+      <div class="cell"><div class="num">4,6</div><div class="cap">рейтинг в 2ГИС</div></div>
+      <div class="cell"><div class="num">35</div><div class="cap">оценок клиентов</div></div>
+      <div class="cell"><div class="num">9-20</div><div class="cap">ежедневно</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- услуги -->
+<section id="uslugi">
+  <div class="wrap">
+    <p class="eyebrow">Услуги</p>
+    <h2>Что делаем в студии</h2>
+    <p class="lead">Работаем по записи. Точную стоимость и свободное время подскажем в сообщениях ВКонтакте или по телефону - цена зависит от длины, дизайна и состояния ногтей.</p>
+
+    <div class="price-grid">
+      <div class="card">
+        <h3>Маникюр</h3>
+        <p class="note">Аппаратный и комбинированный</p>
+        <div class="row"><span class="nm">Маникюр аппаратный</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Маникюр с покрытием гель-лаком</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Укрепление ногтевой пластины гелем</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Наращивание гелем</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Детский маникюр</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Мужской маникюр</span><span class="pr">по запросу</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Педикюр</h3>
+        <p class="note">Женский и мужской</p>
+        <div class="row"><span class="nm">Педикюр женский</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Педикюр мужской</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Педикюр с покрытием гель-лаком</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Гигиеническая чистка стопы и пальцев</span><span class="pr">по запросу</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Подология</h3>
+        <p class="note">Работа с проблемной стопой</p>
+        <div class="row"><span class="nm">Консультация подолога</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Обработка вросшего ногтя</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Работа с натоптышами и трещинами</span><span class="pr">по запросу</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Брови и ресницы</h3>
+        <p class="note">Дополняем к маникюру за один визит</p>
+        <div class="row"><span class="nm">Коррекция бровей</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Окрашивание бровей</span><span class="pr">по запросу</span></div>
+        <div class="row"><span class="nm">Наращивание ресниц</span><span class="pr">по запросу</span></div>
+      </div>
+    </div>
+
+    <p class="price-note">Цены не являются публичной офертой. Итоговая стоимость определяется мастером на приёме.</p>
+  </div>
+</section>
+
+<!-- о студии -->
+<section class="about" id="studio">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow">О студии</p>
+        <h2>Восемь лет на Гидрострое</h2>
+        <p>Студия работает в Краснодаре на ГМР, на проспекте имени Писателя Знаменского. Здесь делают маникюр и педикюр, ведут приём подолога, занимаются бровями и ресницами - всё в одном месте и по записи, без очередей.</p>
+        <p>К нам приходят не на разовую процедуру, а годами: в отзывах клиенты пишут про второй и третий год подряд у одного мастера. Это лучший показатель того, как здесь работают.</p>
+        <ul class="facts">
+          <li>Работаем 8 лет, рейтинг 4,6 в 2ГИС</li>
+          <li>Приём строго по записи, своё время не сдвигаем</li>
+          <li>Индивидуальный набор инструментов, стерилизация после каждого клиента</li>
+          <li>Маникюр, педикюр, подология, брови и ресницы в одной студии</li>
+        </ul>
+      </div>
+      <div class="about-photo"><img src="./g-01.jpg" alt="Молочный маникюр, работа студии"></div>
+    </div>
+  </div>
+</section>
+
+<!-- работы -->
+<section id="raboty">
+  <div class="wrap">
+    <p class="eyebrow">Работы</p>
+    <h2>Портфолио мастеров</h2>
+    <p class="lead">Фотографии работ из сообщества студии ВКонтакте. Нажмите на снимок, чтобы посмотреть крупнее.</p>
+    <div class="gallery" id="gal">
+      <figure><img src="./g-02.jpg" alt="Нюдовый градиент на коротких ногтях" loading="lazy"></figure>
+      <figure><img src="./g-03.jpg" alt="Длинный миндаль, розовое покрытие" loading="lazy"></figure>
+      <figure><img src="./g-04.jpg" alt="Молочный маникюр с рисунком" loading="lazy"></figure>
+      <figure><img src="./g-05.jpg" alt="Розовый маникюр с камифубуки" loading="lazy"></figure>
+      <figure><img src="./g-06.jpg" alt="Нюд с блёстками на акцентных ногтях" loading="lazy"></figure>
+      <figure><img src="./g-07.jpg" alt="Яркий розовый гель-лак" loading="lazy"></figure>
+      <figure><img src="./g-08.jpg" alt="Молочный френч с блёстками" loading="lazy"></figure>
+      <figure><img src="./g-09.jpg" alt="Чёрно-белый дизайн зебра" loading="lazy"></figure>
+      <figure><img src="./g-10.jpg" alt="Тёмно-синий глиттер" loading="lazy"></figure>
+      <figure><img src="./g-11.jpg" alt="Красный глянцевый маникюр" loading="lazy"></figure>
+      <figure><img src="./g-12.jpg" alt="Чёрный маникюр с леопардовым акцентом" loading="lazy"></figure>
+      <figure><img src="./p-01.jpg" alt="Красный педикюр" loading="lazy"></figure>
+      <figure><img src="./p-02.jpg" alt="Голубой педикюр" loading="lazy"></figure>
+      <figure><img src="./g-01.jpg" alt="Молочный маникюр с жемчужным блеском" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- отзывы -->
+<section class="reviews" id="otzyvy">
+  <div class="wrap">
+    <p class="eyebrow">Отзывы</p>
+    <h2>Что пишут клиенты</h2>
+    <p class="lead">Отзывы с карточки студии в 2ГИС. Рейтинг 4,6 из 5 по 35 оценкам.</p>
+    <div class="rev-grid">
+      <div class="rev"><p>"Нравится данная студия. Хожу на маникюр уже год, также на педикюр к подологу"</p><div class="who">Алиса Полуместная</div></div>
+      <div class="rev"><p>"Долго искала в Краснодаре свою студию, случайно нашла эту, и полностью довольна"</p><div class="who">Яна Усольцева</div></div>
+      <div class="rev"><p>"Хорошая светлая студия, все мастера милые и общительные, френч просто отличный"</p><div class="who">Верочка Коваленко</div></div>
+      <div class="rev"><p>"Отличная студия. Приятная атмосфера, мастера просто золотые ручки"</p><div class="who">Лиля Егупова</div></div>
+    </div>
+    <p class="rev-src">Источник: <a href="https://2gis.ru/krasnodar/firm/70000001035189462/tab/reviews" target="_blank" rel="noopener">карточка студии в 2ГИС</a></p>
+  </div>
+</section>
+
+<!-- контакты -->
+<section id="kontakty">
+  <div class="wrap">
+    <p class="eyebrow">Контакты</p>
+    <h2>Как записаться</h2>
+    <p class="lead">Запись по телефону или в сообщения сообщества ВКонтакте. Напишите, какая услуга нужна и когда вам удобно - подберём время.</p>
+    <div class="contact-grid">
+      <div>
+        <div class="cline"><div class="k">Адрес</div><div class="v">Краснодар, проспект имени Писателя Знаменского, 17<br><span style="color:var(--ink-2);font-size:14px">микрорайон Гидростроителей</span></div></div>
+        <div class="cline"><div class="k">Телефон</div><div class="v"><a href="tel:+79183877965">+7 918 387-79-65</a></div></div>
+        <div class="cline"><div class="k">ВКонтакте</div><div class="v"><a href="https://vk.com/club211841083" target="_blank" rel="noopener">vk.com/club211841083</a></div></div>
+        <div class="cline"><div class="k">Часы</div><div class="v">Ежедневно 9:00-20:00, приём по записи</div></div>
+        <div class="contact-cta">
+          <a class="btn btn-dark" href="https://vk.com/club211841083" target="_blank" rel="noopener">Написать во ВКонтакте</a>
+          <a class="btn btn-outline" href="tel:+79183877965">Позвонить</a>
+        </div>
+      </div>
+      <div class="map">
+        <div class="serif">ГМР, Краснодар</div>
+        <p>Проспект имени Писателя Знаменского, 17</p>
+        <a class="btn btn-outline" href="https://2gis.ru/krasnodar/firm/70000001035189462" target="_blank" rel="noopener">Открыть в 2ГИС</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="legal-grid">
+      <div>
+        <h4>Исполнитель</h4>
+        <p>Данные исполнителя (правовой статус, ФИО, ИНН) заполняются по документам студии.</p>
+        <p>Адрес оказания услуг: Краснодар, проспект имени Писателя Знаменского, 17.</p>
+        <p>Телефон: +7 918 387-79-65</p>
+      </div>
+      <div>
+        <h4>Режим работы</h4>
+        <p>Ежедневно с 9:00 до 20:00, приём по предварительной записи.</p>
+        <h4 style="margin-top:18px">Обратная связь</h4>
+        <p>Вопросы и запись - по телефону или в сообщения сообщества ВКонтакте.</p>
+      </div>
+      <div>
+        <h4>Документы</h4>
+        <p>Политика конфиденциальности: сайт не собирает персональные данные, формы заявок отсутствуют. Связь с клиентом происходит по телефону и в мессенджере ВКонтакте.</p>
+      </div>
+    </div>
+    <div class="fine">
+      <p>Цены на сайте не являются публичной офертой. Итоговая стоимость определяется мастером после осмотра.</p>
+      <p>Услуги студии носят эстетический характер и не являются медицинскими. Возможны ограничения: повреждения и воспаления кожи и ногтей, грибковые заболевания, аллергия на компоненты материалов, обострение хронических заболеваний. При сомнениях проконсультируйтесь со специалистом.</p>
+      <p style="margin-top:14px;color:var(--ink-2)">&copy; Студия Юлии Резник, Краснодар. Фотографии работ - из сообщества студии ВКонтакте.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="demo-bar"><b>Демонстрационный пример.</b> Собран по открытым данным ВКонтакте и 2ГИС. Цены и юридические данные уточняются у студии.</div>
+
+<div class="lb" id="lb"><img src="" alt=""></div>
+
+<script>
+(function(){
+  var sticky=document.getElementById('sticky');
+  var hero=document.querySelector('.hero');
+  function onScroll(){
+    var h=hero.offsetHeight*0.75;
+    if(window.scrollY>h){sticky.classList.add('on');}else{sticky.classList.remove('on');}
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  var lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+  document.getElementById('gal').addEventListener('click',function(e){
+    var img=e.target.closest('img'); if(!img) return;
+    lbi.src=img.src; lbi.alt=img.alt; lb.classList.add('on');
+  });
+  lb.addEventListener('click',function(){lb.classList.remove('on');lbi.src='';});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){lb.classList.remove('on');lbi.src='';}});
+})();
+</script>
+</body>
+</html>
