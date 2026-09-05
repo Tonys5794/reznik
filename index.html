@@ -59,7 +59,7 @@ h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif
 .ribbon .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
 .ribbon .cell{padding:26px 10px;text-align:center;border-right:1px solid rgba(250,246,244,.10)}
 .ribbon .cell:last-child{border-right:0}
-.ribbon .num{font-family:"Cormorant Garamond",serif;font-size:clamp(26px,4vw,40px);line-height:1}
+.ribbon .num{font-family:"Cormorant Garamond",serif;font-size:clamp(24px,3.4vw,36px);line-height:1;white-space:nowrap}
 .ribbon .cap{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,246,244,.55);margin-top:8px}
 
 /* ---------- прилипающая шапка ---------- */
@@ -82,8 +82,10 @@ h2{font-size:clamp(30px,4.4vw,48px);margin:0 0 16px;font-weight:300}
 /* услуги */
 .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
 .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px;box-shadow:var(--shadow)}
-.card h3{font-size:26px;margin:0 0 4px}
-.card .note{font-size:12px;color:var(--ink-2);margin:0 0 18px}
+.card h3{font-size:26px;margin:0}
+.card-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-dk);background:var(--cream-2);border-radius:999px;padding:5px 12px}
+.card-price{font-family:"Cormorant Garamond",serif;font-size:32px;line-height:1;margin:14px 0 20px;color:var(--ink)}
 .row{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
 .row:last-child{border-bottom:0}
 .row .nm{flex:1}
@@ -221,7 +223,7 @@ body{padding-bottom:38px}
     <div class="wrap">
       <div class="cell"><div class="num">8</div><div class="cap">лет работаем</div></div>
       <div class="cell"><div class="num">4,6</div><div class="cap">рейтинг в 2ГИС</div></div>
-      <div class="cell"><div class="num">35</div><div class="cap">оценок клиентов</div></div>
+      <div class="cell"><div class="num">от 1 200 ₽</div><div class="cap">маникюр с покрытием</div></div>
       <div class="cell"><div class="num">9-20</div><div class="cap">ежедневно</div></div>
     </div>
   </div>
@@ -230,45 +232,44 @@ body{padding-bottom:38px}
 <!-- услуги -->
 <section id="uslugi">
   <div class="wrap">
-    <p class="eyebrow">Услуги</p>
+    <p class="eyebrow">Услуги и цены</p>
     <h2>Что делаем в студии</h2>
-    <p class="lead">Работаем по записи. Точную стоимость и свободное время подскажем в сообщениях ВКонтакте или по телефону - цена зависит от длины, дизайна и состояния ногтей.</p>
+    <p class="lead">Работаем по записи. Вилка цен зависит от длины, дизайна и состояния ногтей: точную сумму мастер называет на приёме, а сориентировать по телефону или в сообщениях может заранее.</p>
 
     <div class="price-grid">
       <div class="card">
-        <h3>Маникюр</h3>
-        <p class="note">Аппаратный и комбинированный</p>
-        <div class="row"><span class="nm">Маникюр аппаратный</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Маникюр с покрытием гель-лаком</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Укрепление ногтевой пластины гелем</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Наращивание гелем</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Детский маникюр</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Мужской маникюр</span><span class="pr">по запросу</span></div>
+        <div class="card-head"><h3>Маникюр</h3><span class="tag">мастер Юлия</span></div>
+        <p class="card-price">1 400 - 2 500 ₽</p>
+        <div class="row"><span class="nm">Маникюр с покрытием гель-лаком</span></div>
+        <div class="row"><span class="nm">Укрепление ногтевой пластины</span></div>
+        <div class="row"><span class="nm">Коррекция без опила</span></div>
+        <div class="row"><span class="nm">Наращивание любой сложности</span></div>
       </div>
 
       <div class="card">
-        <h3>Педикюр</h3>
-        <p class="note">Женский и мужской</p>
-        <div class="row"><span class="nm">Педикюр женский</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Педикюр мужской</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Педикюр с покрытием гель-лаком</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Гигиеническая чистка стопы и пальцев</span><span class="pr">по запросу</span></div>
+        <div class="card-head"><h3>Маникюр</h3><span class="tag">мастер Ангелина</span></div>
+        <p class="card-price">1 200 - 1 600 ₽</p>
+        <div class="row"><span class="nm">Маникюр с покрытием гель-лаком</span></div>
+        <div class="row"><span class="nm">Укрепление ногтевой пластины</span></div>
+        <div class="row"><span class="nm">Лёгкий дизайн</span></div>
       </div>
 
       <div class="card">
-        <h3>Подология</h3>
-        <p class="note">Работа с проблемной стопой</p>
-        <div class="row"><span class="nm">Консультация подолога</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Обработка вросшего ногтя</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Работа с натоптышами и трещинами</span><span class="pr">по запросу</span></div>
+        <div class="card-head"><h3>Педикюр</h3><span class="tag">мастер Юлия</span></div>
+        <p class="card-price">1 300 - 2 000 ₽</p>
+        <div class="row"><span class="nm">Аппаратный педикюр</span></div>
+        <div class="row"><span class="nm">Гигиеническая чистка стопы и пальцев</span></div>
+        <div class="row"><span class="nm">Покрытие гель-лаком</span></div>
+        <div class="row"><span class="nm">Услуги подолога</span><span class="pr">по записи</span></div>
       </div>
 
       <div class="card">
-        <h3>Брови и ресницы</h3>
-        <p class="note">Дополняем к маникюру за один визит</p>
-        <div class="row"><span class="nm">Коррекция бровей</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Окрашивание бровей</span><span class="pr">по запросу</span></div>
-        <div class="row"><span class="nm">Наращивание ресниц</span><span class="pr">по запросу</span></div>
+        <div class="card-head"><h3>Брови и ресницы</h3><span class="tag">за один визит</span></div>
+        <p class="card-price">500 - 2 000 ₽</p>
+        <div class="row"><span class="nm">Наращивание и ламинирование ресниц</span><span class="pr">1 400 - 2 000 ₽</span></div>
+        <div class="row"><span class="nm">Архитектура и коррекция бровей</span><span class="pr">500 - 1 200 ₽</span></div>
+        <div class="row"><span class="nm">Окрашивание бровей</span><span class="pr">500 - 1 200 ₽</span></div>
+        <div class="row"><span class="nm">Долговременная укладка бровей</span><span class="pr">500 - 1 200 ₽</span></div>
       </div>
     </div>
 
@@ -287,6 +288,7 @@ body{padding-bottom:38px}
         <p>К нам приходят не на разовую процедуру, а годами: в отзывах клиенты пишут про второй и третий год подряд у одного мастера. Это лучший показатель того, как здесь работают.</p>
         <ul class="facts">
           <li>Работаем 8 лет, рейтинг 4,6 в 2ГИС</li>
+          <li>По ногтям работают два мастера: Юлия и Ангелина</li>
           <li>Приём строго по записи, своё время не сдвигаем</li>
           <li>Индивидуальный набор инструментов, стерилизация после каждого клиента</li>
           <li>Маникюр, педикюр, подология, брови и ресницы в одной студии</li>
@@ -327,7 +329,7 @@ body{padding-bottom:38px}
   <div class="wrap">
     <p class="eyebrow">Отзывы</p>
     <h2>Что пишут клиенты</h2>
-    <p class="lead">Отзывы с карточки студии в 2ГИС. Рейтинг 4,6 из 5 по 35 оценкам.</p>
+    <p class="lead">Отзывы с карточки студии в 2ГИС: рейтинг 4,6 из 5 по 35 оценкам.</p>
     <div class="rev-grid">
       <div class="rev"><p>"Нравится данная студия. Хожу на маникюр уже год, также на педикюр к подологу"</p><div class="who">Алиса Полуместная</div></div>
       <div class="rev"><p>"Долго искала в Краснодаре свою студию, случайно нашла эту, и полностью довольна"</p><div class="who">Яна Усольцева</div></div>
@@ -392,7 +394,7 @@ body{padding-bottom:38px}
   </div>
 </footer>
 
-<div class="demo-bar"><b>Демонстрационный пример.</b> Собран по открытым данным ВКонтакте и 2ГИС. Цены и юридические данные уточняются у студии.</div>
+<div class="demo-bar"><b>Демонстрационный пример.</b> Собран по открытым данным сообщества ВКонтакте и карточки 2ГИС. Юридические данные уточняются у студии.</div>
 
 <div class="lb" id="lb"><img src="" alt=""></div>
 
